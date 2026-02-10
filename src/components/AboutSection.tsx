@@ -6,10 +6,10 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const skills = [
-    { name: "DESIGN", level: 95 },
-    { name: "DEVELOPMENT", level: 90 },
-    { name: "CREATIVITY", level: 100 },
-    { name: "BRUTALISM", level: 88 },
+    { name: "MOVE BYTECODE ANALYSIS", level: 98 },
+    { name: "THREAT INTELLIGENCE", level: 95 },
+    { name: "POLICY ENFORCEMENT", level: 100 },
+    { name: "REAL-TIME MONITORING", level: 92 },
   ];
 
   return (
@@ -26,22 +26,22 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="text-accent font-body text-sm tracking-widest uppercase mb-4 block">
-              // About Me
+              // Defending Web3
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display mb-6">
-              BREAKING
-              <span className="text-stroke block">CONVENTIONS</span>
+              INTERCEPTING
+              <span className="text-stroke block">EXPLOITS</span>
             </h2>
             <div className="space-y-4 text-muted-foreground font-body text-sm md:text-base leading-relaxed">
               <p>
-                I reject the polished, the refined, the expected. My work embraces 
-                the raw power of unfiltered design - where structure meets chaos 
-                and function collides with form.
+                Syntrei is a decentralized pre-transaction analysis and monitoring tool
+                designed to eliminate on-chain exploits. We intercept risks
+                before they reach the chain, preserving low-latency performance.
               </p>
               <p>
-                Every project is an experiment in pushing boundaries. I build 
-                digital experiences that demand attention, challenge perceptions, 
-                and leave lasting impressions.
+                Leveraging Move VM introspection and collective threat intelligence,
+                Syntrei establishes a new security standard for wallets, dApps,
+                and institutional users in the Move ecosystem.
               </p>
             </div>
           </motion.div>
@@ -85,9 +85,9 @@ const AboutSection = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           {[
-            { title: "01", subtitle: "FEARLESS", desc: "Bold choices, no compromises" },
-            { title: "02", subtitle: "AUTHENTIC", desc: "Raw, honest, unfiltered" },
-            { title: "03", subtitle: "IMPACTFUL", desc: "Designs that resonate" },
+            { title: "01", subtitle: "HYBRID FIREWALL", desc: "Real-time pre-transaction analysis and intercept layer." },
+            { title: "02", subtitle: "MOVE SECAI", desc: "AI model specialized in Move bytecode auditing and bug detection." },
+            { title: "03", subtitle: "0XSECURE", desc: "Unified dashboard for live security monitoring and management." },
           ].map((card, i) => (
             <motion.div
               key={card.title}

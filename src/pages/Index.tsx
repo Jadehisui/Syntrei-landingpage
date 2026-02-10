@@ -11,20 +11,20 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>BRUTAL. | Raw Design Power</title>
-        <meta name="description" content="A brutalist digital experience - raw design, zero compromises. Breaking conventions with bold, authentic, and impactful work." />
+        <title>SYNTREI | Pre-Transaction Analysis & Security</title>
+        <meta name="description" content="A decentralized pre-transaction analysis and monitoring tool designed to eliminate on-chain exploits and threats in the Move ecosystem." />
       </Helmet>
-      
+
       <MouseFollower />
       <Navigation />
-      
+
       <main>
         <HeroSection />
         <PartnersSection />
         <AboutSection />
         <ContactSection />
       </main>
-      
+
       <Footer />
     </>
   );

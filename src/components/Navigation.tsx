@@ -10,9 +10,9 @@ const Navigation = () => {
 
   const links = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "Our Work", href: "/work" },
-    { name: "Research", href: "/research" },
+    { name: "Solutions", href: "/services" },
+    { name: "Security", href: "/work" },
+    { name: "Technology", href: "/research" },
     { name: "Team", href: "/team" },
     { name: "Contact", href: "/contact" },
   ];
@@ -41,14 +41,12 @@ const Navigation = () => {
                 <motion.div key={link.name} whileHover={{ y: -2 }}>
                   <Link
                     to={link.href}
-                    className={`font-display text-base uppercase tracking-wider transition-colors relative group ${
-                      isActive(link.href) ? "text-primary" : "text-foreground hover:text-primary"
-                    }`}
+                    className={`font-display text-base uppercase tracking-wider transition-colors relative group ${isActive(link.href) ? "text-primary" : "text-foreground hover:text-primary"
+                      }`}
                   >
                     <MatrixText text={link.name} />
-                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${
-                      isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
-                    }`} />
+                    <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
+                      }`} />
                   </Link>
                 </motion.div>
               ))}
@@ -59,7 +57,7 @@ const Navigation = () => {
           <div className="hidden md:flex">
             <Button asChild>
               <Link to="/contact" className="font-display text-base uppercase tracking-wider">
-                REQUEST QUOTE
+                GET PROTECTED
               </Link>
             </Button>
           </div>
@@ -103,9 +101,8 @@ const Navigation = () => {
             >
               <Link
                 to={link.href}
-                className={`block font-display text-xl uppercase tracking-wider transition-colors ${
-                  isActive(link.href) ? "text-primary" : "text-foreground hover:text-primary"
-                }`}
+                className={`block font-display text-xl uppercase tracking-wider transition-colors ${isActive(link.href) ? "text-primary" : "text-foreground hover:text-primary"
+                  }`}
                 onClick={() => setIsOpen(false)}
               >
                 <MatrixText text={link.name} />

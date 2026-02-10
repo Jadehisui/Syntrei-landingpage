@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import MouseFollower from "@/components/MouseFollower";
 import { motion } from "framer-motion";
 import FloatingParticles from "@/components/FloatingParticles";
+import { ShieldAlert, Brain, LayoutDashboard, ShieldCheck, Lock, Settings } from "lucide-react";
 
 const Services = () => {
   return (
@@ -19,7 +20,7 @@ const Services = () => {
       <main>
         <section className="min-h-screen py-20 md:py-32 bg-brutalist-midnight relative overflow-hidden">
           <FloatingParticles count={15} />
-          
+
           <div className="container mx-auto px-4 md:px-8">
             <motion.div
               className="max-w-6xl mx-auto"
@@ -58,8 +59,8 @@ const Services = () => {
                           hidden: { y: 30, opacity: 0, rotateX: -90 },
                           visible: { y: 0, opacity: 1, rotateX: 0 }
                         }}
-                        transition={{ 
-                          duration: 0.6, 
+                        transition={{
+                          duration: 0.6,
                           ease: "easeOut",
                           type: "spring",
                           stiffness: 100
@@ -91,8 +92,8 @@ const Services = () => {
                           hidden: { y: 30, opacity: 0, rotateX: -90 },
                           visible: { y: 0, opacity: 1, rotateX: 0 }
                         }}
-                        transition={{ 
-                          duration: 0.6, 
+                        transition={{
+                          duration: 0.6,
                           ease: "easeOut",
                           type: "spring",
                           stiffness: 100
@@ -112,58 +113,58 @@ const Services = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                   {
-                    title: "Transactional Firewall",
-                    description: "Advanced firewall services specifically designed for Move VM transactions, protecting against malicious activities and ensuring secure operations.",
-                    icon: "🔥",
+                    title: "Hybrid Transactional Firewall",
+                    description: "A state-of-the-art security layer that intercepts and analyzes transactions pre-execution to block malicious operations.",
+                    icon: <ShieldAlert className="w-12 h-12 text-primary" />,
+                  },
+                  {
+                    title: "Move SecAI",
+                    description: "An AI model solely trained on Move auditing and bug detection, providing automated vulnerability analysis for smart contracts.",
+                    icon: <Brain className="w-12 h-12 text-primary" />,
+                  },
+                  {
+                    title: "0xSecure Dashboard",
+                    description: "A comprehensive user dashboard for real-time wallet security, permission management, and threat visualization.",
+                    icon: <LayoutDashboard className="w-12 h-12 text-primary" />,
                   },
                   {
                     title: "Security Auditing",
-                    description: "Comprehensive auditing services for smart contracts and Move VM applications, identifying vulnerabilities and ensuring compliance.",
-                    icon: "🔍",
+                    description: "In-depth manual and automated audits for protocols, ensuring the highest standards of code safety and economic security.",
+                    icon: <ShieldCheck className="w-12 h-12 text-primary" />,
                   },
                   {
-                    title: "Move Sec AI",
-                    description: "AI-powered security tooling for auditors, providing intelligent analysis and automated vulnerability detection for Move-based projects.",
-                    icon: "🤖",
+                    title: "Safelock Protocol",
+                    description: "Assets can be locked in SBT-based NFTs and instantly protected with a single click of a button.",
+                    icon: <Lock className="w-12 h-12 text-primary" />,
                   },
                   {
-                    title: "Consulting",
-                    description: "Expert security consulting for blockchain projects, helping teams implement best practices and secure their applications.",
-                    icon: "💡",
-                  },
-                  {
-                    title: "Penetration Testing",
-                    description: "Thorough penetration testing services to simulate real-world attacks and identify potential security weaknesses.",
-                    icon: "🛡️",
-                  },
-                  {
-                    title: "Compliance Support",
-                    description: "Assistance with regulatory compliance requirements, ensuring your project meets industry standards and legal obligations.",
-                    icon: "📋",
+                    title: "Custom Security Policies",
+                    description: "Tailored security rules defined in Move-compatible YAML for node-level filtering and asset safety.",
+                    icon: <Settings className="w-12 h-12 text-primary" />,
                   },
                 ].map((service, index) => (
                   <motion.div
                     key={service.title}
                     className="brutalist-card p-6 group relative overflow-hidden"
-                    initial={{ 
+                    initial={{
                       opacity: 0,
                       y: 50,
                       rotateX: -15,
                       scale: 0.9
                     }}
-                    animate={{ 
+                    animate={{
                       opacity: 1,
                       y: 0,
                       rotateX: 0,
                       scale: 1
                     }}
-                    transition={{ 
-                      duration: 0.8, 
+                    transition={{
+                      duration: 0.8,
                       delay: index * 0.15,
                       type: "spring",
                       stiffness: 100
                     }}
-                    whileHover={{ 
+                    whileHover={{
                       y: -10,
                       rotateX: 5,
                       scale: 1.05,
@@ -177,11 +178,11 @@ const Services = () => {
                       animate={{ rotate: [0, 360] }}
                       transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                     />
-                    
+
                     {/* Icon with bounce animation */}
-                    <motion.div 
-                      className="text-4xl mb-4 relative z-10"
-                      whileHover={{ 
+                    <motion.div
+                      className="mb-4 relative z-10"
+                      whileHover={{
                         scale: 1.2,
                         rotate: [0, -10, 10, 0],
                         transition: { duration: 0.5 }
@@ -189,8 +190,8 @@ const Services = () => {
                     >
                       {service.icon}
                     </motion.div>
-                    
-                    <motion.h3 
+
+                    <motion.h3
                       className="text-xl font-display uppercase tracking-wider mb-3 text-primary relative z-10"
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
@@ -198,8 +199,8 @@ const Services = () => {
                     >
                       {service.title}
                     </motion.h3>
-                    
-                    <motion.p 
+
+                    <motion.p
                       className="text-muted-foreground font-body relative z-10"
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}

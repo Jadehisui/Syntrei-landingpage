@@ -55,8 +55,8 @@ const Research = () => {
                           hidden: { y: 30, opacity: 0, rotateX: -90 },
                           visible: { y: 0, opacity: 1, rotateX: 0 }
                         }}
-                        transition={{ 
-                          duration: 0.6, 
+                        transition={{
+                          duration: 0.6,
                           ease: "easeOut",
                           type: "spring",
                           stiffness: 100
@@ -88,8 +88,8 @@ const Research = () => {
                           hidden: { y: 30, opacity: 0, rotateX: -90 },
                           visible: { y: 0, opacity: 1, rotateX: 0 }
                         }}
-                        transition={{ 
-                          duration: 0.6, 
+                        transition={{
+                          duration: 0.6,
                           ease: "easeOut",
                           type: "spring",
                           stiffness: 100
@@ -109,52 +109,52 @@ const Research = () => {
               <div className="grid md:grid-cols-2 gap-8">
                 {[
                   {
-                    title: "Move VM Security Analysis",
-                    description: "Deep dive into Move VM architecture, common vulnerabilities, and best practices for secure smart contract development.",
-                    date: "December 2025",
-                    category: "Technical Analysis",
+                    title: "Move VM Introspection",
+                    description: "Analying transaction logic before and after execution to intercept malicious operations while preserving low-latency performance.",
+                    date: "Nov 2025",
+                    category: "Core Tech",
                   },
                   {
-                    title: "AI-Powered Vulnerability Detection",
-                    description: "Exploring the use of machine learning and AI techniques for automated vulnerability detection in blockchain applications.",
-                    date: "November 2025",
-                    category: "Innovation",
+                    title: "Threat Intelligence Network",
+                    description: "Aggregating data from on-chain analysis, community feeds, and enterprise partners like CertiK and SlowMist.",
+                    date: "Oct 2025",
+                    category: "Intelligence",
                   },
                   {
-                    title: "Transactional Firewall Effectiveness",
-                    description: "Case studies and analysis of transactional firewall implementations in real-world Move VM deployments.",
-                    date: "October 2025",
-                    category: "Case Study",
+                    title: "Policy Framework on Sui",
+                    description: "Implementing user-customizable rules defined in Move-compatible YAML for node-level filtering and asset safety.",
+                    date: "Sept 2025",
+                    category: "Enforcement",
                   },
                   {
-                    title: "Auditor Tooling Advancements",
-                    description: "Latest developments in security auditing tools and methodologies for blockchain and DeFi projects.",
-                    date: "September 2025",
-                    category: "Tooling",
+                    title: "Reputation Oracle",
+                    description: "A decentralized registry of address and token risk scores computed via machine learning models.",
+                    date: "Aug 2025",
+                    category: "Data Strategy",
                   },
                 ].map((research, index) => (
                   <motion.div
                     key={research.title}
                     className="brutalist-card p-6 group relative overflow-hidden"
-                    initial={{ 
+                    initial={{
                       opacity: 0,
                       x: index % 2 === 0 ? -50 : 50,
                       rotateZ: index % 2 === 0 ? -5 : 5,
                       scale: 0.9
                     }}
-                    animate={{ 
+                    animate={{
                       opacity: 1,
                       x: 0,
                       rotateZ: 0,
                       scale: 1
                     }}
-                    transition={{ 
-                      duration: 0.8, 
+                    transition={{
+                      duration: 0.8,
                       delay: index * 0.2,
                       type: "spring",
                       stiffness: 100
                     }}
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.03,
                       rotateZ: index % 2 === 0 ? 2 : -2,
                       transition: { duration: 0.3 }
@@ -163,17 +163,17 @@ const Research = () => {
                     {/* Animated gradient background */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 opacity-0 group-hover:opacity-100"
-                      animate={{ 
+                      animate={{
                         x: ['-100%', '100%'],
                       }}
-                      transition={{ 
-                        duration: 3, 
+                      transition={{
+                        duration: 3,
                         repeat: Infinity,
                         ease: "linear"
                       }}
                     />
-                    
-                    <motion.div 
+
+                    <motion.div
                       className="flex justify-between items-start mb-4 relative z-10"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -186,8 +186,8 @@ const Research = () => {
                         {research.date}
                       </span>
                     </motion.div>
-                    
-                    <motion.h3 
+
+                    <motion.h3
                       className="text-xl font-display uppercase tracking-wider mb-3 text-primary relative z-10"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -195,8 +195,8 @@ const Research = () => {
                     >
                       {research.title}
                     </motion.h3>
-                    
-                    <motion.p 
+
+                    <motion.p
                       className="text-muted-foreground font-body relative z-10"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -204,7 +204,7 @@ const Research = () => {
                     >
                       {research.description}
                     </motion.p>
-                    
+
                     <motion.button
                       className="mt-4 text-primary font-display text-sm uppercase tracking-wider hover:text-accent transition-colors relative z-10"
                       whileHover={{ x: 5 }}

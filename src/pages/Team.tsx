@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import MouseFollower from "@/components/MouseFollower";
 import { motion } from "framer-motion";
 import FloatingParticles from "@/components/FloatingParticles";
+import { User, ShieldCheck, Microscope, Database, Lock, Scale } from "lucide-react";
 
 const Team = () => {
   return (
@@ -19,7 +20,7 @@ const Team = () => {
       <main>
         <section className="min-h-screen py-20 md:py-32 bg-brutalist-midnight relative overflow-hidden">
           <FloatingParticles count={12} colors={["#00ff88", "#ff6b6b", "#4ecdc4", "#f9ca24"]} />
-          
+
           <div className="container mx-auto px-4 md:px-8">
             <motion.div
               className="max-w-6xl mx-auto"
@@ -58,8 +59,8 @@ const Team = () => {
                           hidden: { y: 30, opacity: 0, rotateX: -90 },
                           visible: { y: 0, opacity: 1, rotateX: 0 }
                         }}
-                        transition={{ 
-                          duration: 0.6, 
+                        transition={{
+                          duration: 0.6,
                           ease: "easeOut",
                           type: "spring",
                           stiffness: 100
@@ -91,8 +92,8 @@ const Team = () => {
                           hidden: { y: 30, opacity: 0, rotateX: -90 },
                           visible: { y: 0, opacity: 1, rotateX: 0 }
                         }}
-                        transition={{ 
-                          duration: 0.6, 
+                        transition={{
+                          duration: 0.6,
                           ease: "easeOut",
                           type: "spring",
                           stiffness: 100
@@ -115,61 +116,61 @@ const Team = () => {
                     name: "Alex Chen",
                     role: "Chief Security Officer",
                     expertise: "Move VM Security, Smart Contracts",
-                    image: "👨‍💼",
+                    image: <ShieldCheck className="w-16 h-16 text-primary" />,
                   },
                   {
                     name: "Sarah Johnson",
                     role: "Lead Researcher",
                     expertise: "Cryptography, AI Security",
-                    image: "👩‍🔬",
+                    image: <Microscope className="w-16 h-16 text-primary" />,
                   },
                   {
                     name: "Marcus Rodriguez",
                     role: "Senior Auditor",
                     expertise: "Blockchain Auditing, DeFi",
-                    image: "👨‍💻",
+                    image: <User className="w-16 h-16 text-primary" />,
                   },
                   {
                     name: "Dr. Emily Zhang",
                     role: "AI Security Specialist",
                     expertise: "Machine Learning, Vulnerability Detection",
-                    image: "👩‍🎓",
+                    image: <Database className="w-16 h-16 text-primary" />,
                   },
                   {
                     name: "David Kim",
                     role: "Platform Engineer",
                     expertise: "Infrastructure Security, DevOps",
-                    image: "👨‍🔧",
+                    image: <Lock className="w-16 h-16 text-primary" />,
                   },
                   {
                     name: "Lisa Park",
                     role: "Compliance Officer",
                     expertise: "Regulatory Compliance, Risk Assessment",
-                    image: "👩‍⚖️",
+                    image: <Scale className="w-16 h-16 text-primary" />,
                   },
                 ].map((member, index) => (
                   <motion.div
                     key={member.name}
                     className="brutalist-card p-6 text-center group relative overflow-hidden"
-                    initial={{ 
+                    initial={{
                       opacity: 0,
                       scale: 0.8,
                       rotateY: -90,
                       y: 30
                     }}
-                    animate={{ 
+                    animate={{
                       opacity: 1,
                       scale: 1,
                       rotateY: 0,
                       y: 0
                     }}
-                    transition={{ 
-                      duration: 0.8, 
+                    transition={{
+                      duration: 0.8,
                       delay: index * 0.2,
                       type: "spring",
                       stiffness: 80
                     }}
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.05,
                       rotateY: 5,
                       y: -10,
@@ -179,24 +180,23 @@ const Team = () => {
                     {/* Animated background */}
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      animate={{ 
+                      animate={{
                         backgroundPosition: ['0% 0%', '100% 100%'],
                       }}
                       transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
                     />
-                    
-                    {/* Avatar with floating animation */}
-                    <motion.div 
-                      className="text-6xl mb-4 relative z-10"
-                      animate={{ 
+
+                    <motion.div
+                      className="mb-4 relative z-10 flex justify-center"
+                      animate={{
                         y: [0, -5, 0],
                       }}
-                      transition={{ 
-                        duration: 3, 
+                      transition={{
+                        duration: 3,
                         repeat: Infinity,
                         delay: index * 0.5
                       }}
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.1,
                         rotate: [0, -5, 5, 0],
                         transition: { duration: 0.6 }
@@ -204,8 +204,8 @@ const Team = () => {
                     >
                       {member.image}
                     </motion.div>
-                    
-                    <motion.h3 
+
+                    <motion.h3
                       className="text-xl font-display uppercase tracking-wider mb-2 text-primary relative z-10"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -213,8 +213,8 @@ const Team = () => {
                     >
                       {member.name}
                     </motion.h3>
-                    
-                    <motion.p 
+
+                    <motion.p
                       className="text-accent font-body text-sm uppercase tracking-wider mb-3 relative z-10"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -222,8 +222,8 @@ const Team = () => {
                     >
                       {member.role}
                     </motion.p>
-                    
-                    <motion.p 
+
+                    <motion.p
                       className="text-muted-foreground font-body text-sm relative z-10"
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}

@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
+import { Shield, Droplets, Fingerprint, Waves, BarChart3, Rocket } from "lucide-react";
 
 const PartnersSection = () => {
   const partners = [
-    { name: "Aptos", logo: "🟡" },
-    { name: "Sui", logo: "🔵" },
-    { name: "Movement Labs", logo: "🚀" },
-    { name: "Initia", logo: "🌟" },
-    { name: "Sei Network", logo: "⚡" },
-    { name: "LayerZero", logo: "🌐" },
+    { name: "Sui Foundation", logo: <Droplets className="w-12 h-12 text-primary" /> },
+    { name: "CertiK", logo: <Shield className="w-12 h-12 text-primary" /> },
+    { name: "SlowMist", logo: <Fingerprint className="w-12 h-12 text-primary" /> },
+    { name: "Mysten Labs", logo: <Waves className="w-12 h-12 text-primary" /> },
+    { name: "Chainalysis", logo: <BarChart3 className="w-12 h-12 text-primary" /> },
+    { name: "Movement", logo: <Rocket className="w-12 h-12 text-primary" /> },
   ];
 
   return (
@@ -39,7 +40,7 @@ const PartnersSection = () => {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-4xl md:text-5xl filter blur-[0.5px]">
+              <div className="mb-2">
                 {partner.logo}
               </div>
               <span className="text-muted-foreground font-body text-sm uppercase tracking-wider">

@@ -12,10 +12,10 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
           >
             <Link to="/" className="font-display text-2xl text-foreground">
-              BRUTAL<span className="text-primary">.</span>
+              SYNTREI<span className="text-primary">.</span>
             </Link>
             <p className="font-body text-sm text-muted-foreground mt-2">
-              Raw design, zero compromises
+              Advanced pre-transaction security layer
             </p>
           </motion.div>
 
@@ -74,10 +74,10 @@ const Footer = () => {
           className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p className="font-body text-xs text-muted-foreground">
-            © 2024 BRUTAL. All rights reserved
+            © 2025 SYNTREI. All rights reserved
           </p>
           <p className="font-body text-xs text-muted-foreground">
-            Designed with raw passion
+            Securing the Move ecosystem
           </p>
         </motion.div>
       </div>

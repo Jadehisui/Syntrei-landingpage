@@ -45,7 +45,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact | BRUTAL. - Let's Collaborate</title>
+        <title>Contact | SYNTREI - Let's Talk Security</title>
         <meta name="description" content="Ready to start a project? Get in touch for collaborations, inquiries, or just to say hello. Open for worldwide projects." />
       </Helmet>
 
@@ -56,7 +56,7 @@ const Contact = () => {
         {/* Hero Section */}
         <section className="min-h-[50vh] flex items-center justify-center bg-brutalist-midnight relative overflow-hidden">
           <GeometricShapes variant="dense" />
-          
+
           <div className="container mx-auto px-4 md:px-8 py-20">
             <motion.div
               initial={{ y: 50, opacity: 0 }}
@@ -81,7 +81,7 @@ const Contact = () => {
         {/* Contact Form Section */}
         <section className="py-20 md:py-32 bg-brutalist-deep relative overflow-hidden">
           <GeometricShapes variant="sparse" />
-          
+
           <div className="container mx-auto px-4 md:px-8">
             <motion.div ref={ref} className="max-w-4xl mx-auto">
               <motion.form

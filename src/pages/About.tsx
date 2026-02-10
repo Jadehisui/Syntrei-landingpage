@@ -11,17 +11,17 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const skills = [
-    { name: "DESIGN", level: 95 },
-    { name: "DEVELOPMENT", level: 90 },
-    { name: "CREATIVITY", level: 100 },
-    { name: "BRUTALISM", level: 88 },
+    { name: "MOVE VM INTROSPECTION", level: 98 },
+    { name: "THREAT INTELLIGENCE", level: 95 },
+    { name: "POLICY ENFORCEMENT", level: 100 },
+    { name: "REAL-TIME MONITORING", level: 92 },
   ];
 
   return (
     <>
       <Helmet>
-        <title>About | BRUTAL. - Breaking Conventions</title>
-        <meta name="description" content="Discover the philosophy behind brutalist design. We reject the polished and embrace raw, authentic digital experiences." />
+        <title>About | SYNTREI - Pre-Transaction Security</title>
+        <meta name="description" content="Learn about Syntrei's mission to secure the Move ecosystem through decentralized pre-transaction analysis and monitoring." />
       </Helmet>
 
       <MouseFollower />
@@ -31,7 +31,7 @@ const About = () => {
         {/* Hero Section */}
         <section className="min-h-[60vh] flex items-center justify-center bg-brutalist-deep relative overflow-hidden">
           <GeometricShapes variant="dense" />
-          
+
           <div className="container mx-auto px-4 md:px-8 py-20">
             <motion.div
               initial={{ y: 50, opacity: 0 }}
@@ -40,11 +40,11 @@ const About = () => {
               className="text-center"
             >
               <span className="text-accent font-body text-sm tracking-widest uppercase mb-4 block">
-                // About Me
+                // Our Mission
               </span>
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display leading-none">
-                BREAKING
-                <span className="text-stroke block">CONVENTIONS</span>
+                SECURING
+                <span className="text-stroke block">THE FUTURE</span>
               </h1>
             </motion.div>
           </div>
@@ -53,7 +53,7 @@ const About = () => {
         {/* Philosophy Section */}
         <section className="py-20 md:py-32 bg-brutalist-midnight relative overflow-hidden">
           <GeometricShapes variant="sparse" />
-          
+
           <div className="container mx-auto px-4 md:px-8">
             <motion.div
               ref={ref}
@@ -65,23 +65,23 @@ const About = () => {
                 transition={{ duration: 0.8 }}
               >
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-display mb-6 text-foreground">
-                  THE PHILOSOPHY
+                  THE ARCHITECTURE
                 </h2>
                 <div className="space-y-4 text-muted-foreground font-body text-sm md:text-base leading-relaxed">
                   <p>
-                    I reject the polished, the refined, the expected. My work embraces 
-                    the raw power of unfiltered design - where structure meets chaos 
-                    and function collides with form.
+                    Syntrei addresses the fundamental vulnerabilities of the Move ecosystem
+                    by embedding a firewall at the transaction signing layer,
+                    intercepting risks before they reach the chain.
                   </p>
                   <p>
-                    Every project is an experiment in pushing boundaries. I build 
-                    digital experiences that demand attention, challenge perceptions, 
-                    and leave lasting impressions.
+                    Our architecture leverages high-performance introspection and
+                    user-defined policies to provide a seamless security layer
+                    that won't compromise on-chain finality.
                   </p>
                   <p>
-                    Brutalism in design isn't about being ugly or harsh - it's about 
-                    honesty. It's about showing the bones of a structure, the raw 
-                    materials, the truth of what something is.
+                    From asset safety and DeFi shields to governance protection,
+                    Syntrei provides a comprehensive framework for trustless
+                    but safe adoption of blockchain technology.
                   </p>
                 </div>
               </motion.div>
@@ -121,7 +121,7 @@ const About = () => {
         {/* Values Section */}
         <section className="py-20 md:py-32 bg-brutalist-deep relative overflow-hidden">
           <GeometricShapes />
-          
+
           <div className="container mx-auto px-4 md:px-8">
             <motion.div
               initial={{ y: 50, opacity: 0 }}
@@ -143,9 +143,9 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               {[
-                { title: "01", subtitle: "FEARLESS", desc: "Bold choices, no compromises. Every decision is intentional and unapologetic." },
-                { title: "02", subtitle: "AUTHENTIC", desc: "Raw, honest, unfiltered. We show the truth of design without pretense." },
-                { title: "03", subtitle: "IMPACTFUL", desc: "Designs that resonate. We create experiences that leave lasting impressions." },
+                { title: "01", subtitle: "INTEGRITY", desc: "We ensure transaction intent matches execution perfectly, every time." },
+                { title: "02", subtitle: "TRANSPARENCY", desc: "Live security monitoring and audit-ready logs for all stakeholders." },
+                { title: "03", subtitle: "RESILIENCE", desc: "Adaptive defense mechanisms that evolve with emerging on-chain threats." },
               ].map((card, i) => (
                 <motion.div
                   key={card.title}

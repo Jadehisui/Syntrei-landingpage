@@ -9,52 +9,53 @@ const Work = () => {
   const projects = [
     {
       id: 1,
-      title: "SYntrei",
-      category: "Syntrei",
-      description: "Unified Security & Operations Platform.",
+      title: "DEFI LIQUIDITY ATTACK",
+      category: "Flash Loan Defense",
+      year: "Nov 2025",
+      description: "Successfully intercepted a complex flash loan exploit targeting a major Sui liquidity pool.",
     },
     {
       id: 2,
-      title: "RAW IDENTITY",
-      category: "Branding",
-      year: "2024",
-      description: "Corporate identity stripped to its bare essentials.",
+      title: "NFT DRAINER BLOCK",
+      category: "Asset Safety",
+      year: "Oct 2025",
+      description: "Blocked a malicious Move call disguised as a legitimate NFT minting operation.",
     },
     {
       id: 3,
-      title: "CONCRETE DREAMS",
-      category: "UI/UX",
-      year: "2023",
-      description: "Mobile app design inspired by architectural brutalism.",
+      title: "PHISHING INTERCEPTION",
+      category: "Retail Safety",
+      year: "Oct 2025",
+      description: "Real-time threat feeds identified and blocked 200+ signatures to a new phishing domain.",
     },
     {
       id: 4,
-      title: "NOISE MACHINE",
-      category: "Creative Dev",
-      year: "2023",
-      description: "Interactive installation exploring digital texture and sound.",
+      title: "FEE MANIPULATION",
+      category: "Protocol Security",
+      year: "Sept 2025",
+      description: "Detected and halted an unauthorized argument change in a critical governance function.",
     },
     {
       id: 5,
-      title: "GRID BREAKER",
-      category: "Web Design",
-      year: "2023",
-      description: "Portfolio site that defies traditional layout conventions.",
+      title: "SBT SAFELOCK TEST",
+      category: "Asset Recovery",
+      year: "Aug 2025",
+      description: "Demonstrated instant asset freezing via Safelock protocol during a simulated breach.",
     },
     {
       id: 6,
-      title: "STARK VISION",
-      category: "Branding",
-      year: "2022",
-      description: "Visual identity for an architecture firm.",
+      title: "OFAC COMPLIANCE",
+      category: "Institutional",
+      year: "Aug 2025",
+      description: "Implemented custom spending limits and sanctioned address filtering for a Tier 1 custodian.",
     },
   ];
 
   return (
     <>
       <Helmet>
-        <title>Our Work | BRUTAL. - Portfolio</title>
-        <meta name="description" content="Explore our portfolio of brutalist design projects. From web design to branding, we create raw, impactful digital experiences." />
+        <title>Security Interceptions | SYNTREI - Case Studies</title>
+        <meta name="description" content="Review our track record of intercepting on-chain threats, phishing attempts, and contract exploits in real-time." />
       </Helmet>
 
       <MouseFollower />
@@ -64,7 +65,7 @@ const Work = () => {
         {/* Hero Section */}
         <section className="min-h-[50vh] flex items-center justify-center bg-brutalist-deep relative overflow-hidden">
           <GeometricShapes variant="dense" />
-          
+
           <div className="container mx-auto px-4 md:px-8 py-20">
             <motion.div
               initial={{ y: 50, opacity: 0 }}
@@ -73,11 +74,11 @@ const Work = () => {
               className="text-center"
             >
               <span className="text-accent font-body text-sm tracking-widest uppercase mb-4 block">
-                // Portfolio
+                // Security Track Record
               </span>
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display leading-none">
                 OUR
-                <span className="text-stroke block">WORK</span>
+                <span className="text-stroke block">DEFENSE</span>
               </h1>
             </motion.div>
           </div>
@@ -86,7 +87,7 @@ const Work = () => {
         {/* Projects Grid */}
         <section className="py-20 md:py-32 bg-brutalist-midnight relative overflow-hidden">
           <GeometricShapes variant="sparse" />
-          
+
           <div className="container mx-auto px-4 md:px-8">
             <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               {projects.map((project, index) => (
@@ -100,7 +101,7 @@ const Work = () => {
                   whileHover={{ rotate: 0, scale: 1.02 }}
                 >
                   {/* Project Number */}
-                  <motion.span 
+                  <motion.span
                     className="absolute top-4 right-4 text-6xl md:text-8xl font-display text-primary/10"
                     whileHover={{ scale: 1.1 }}
                   >
@@ -158,7 +159,7 @@ const Work = () => {
         {/* CTA Section */}
         <section className="py-20 md:py-32 bg-brutalist-deep relative overflow-hidden">
           <GeometricShapes />
-          
+
           <div className="container mx-auto px-4 md:px-8">
             <motion.div
               initial={{ y: 50, opacity: 0 }}
@@ -168,10 +169,10 @@ const Work = () => {
               className="text-center max-w-3xl mx-auto"
             >
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display text-foreground mb-6">
-                HAVE A PROJECT IN MIND?
+                WANT TO DEPLOY SYNTREI?
               </h2>
               <p className="font-body text-muted-foreground text-lg mb-8">
-                Let's create something bold and unforgettable together.
+                Protect your users and assets with the most advanced pre-transaction security layer.
               </p>
               <motion.a
                 href="/contact"
@@ -179,7 +180,7 @@ const Work = () => {
                 whileHover={{ scale: 1.02, rotate: -1 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Start a Project
+                Get Started
               </motion.a>
             </motion.div>
           </div>

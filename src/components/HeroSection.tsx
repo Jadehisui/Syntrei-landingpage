@@ -8,7 +8,7 @@ const HeroSection = () => {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Welcome to Syntrei.";
+  const fullText = "Hybrid Firewall. Move SecAI. 0xSecure Dashboard.";
   const [isTypingComplete, setIsTypingComplete] = useState(false);
 
   useEffect(() => {
@@ -33,8 +33,8 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-brutal">
       <FloatingBlocks />
-      
-      <motion.div 
+
+      <motion.div
         className="relative z-10 container mx-auto px-4 md:px-8"
         style={{ y, opacity }}
       >
@@ -79,7 +79,7 @@ const HeroSection = () => {
                 }
               }}
             >
-              {"UNIFIED".split("").map((letter, index) => (
+              {"PRE-TRANSACTION".split("").map((letter, index) => (
                 <motion.span
                   key={index}
                   variants={{
@@ -107,7 +107,7 @@ const HeroSection = () => {
                 }
               }}
             >
-              {"SECURITY OPERATION".split("").map((letter, index) => (
+              {"ANALYSIS & MONITORING".split("").map((letter, index) => (
                 <motion.span
                   key={index}
                   variants={{
@@ -135,7 +135,7 @@ const HeroSection = () => {
                 }
               }}
             >
-              {"PLATFORM".split("").map((letter, index) => (
+              {"SECURITY LAYER".split("").map((letter, index) => (
                 <motion.span
                   key={index}
                   variants={{
@@ -165,7 +165,7 @@ const HeroSection = () => {
             >
               Explore More
             </motion.button>
-            
+
             <motion.a
               href="#contact"
               className="border-4 border-primary bg-transparent px-8 py-4 text-primary font-display text-lg uppercase tracking-wider text-center hover:bg-primary hover:text-background transition-colors"
