@@ -72,7 +72,7 @@ const Team = () => {
                     ))}
                   </motion.span>
                   <motion.span
-                    className="text-stroke block"
+                    className="block text-foreground/50"
                     initial="hidden"
                     animate="visible"
                     variants={{

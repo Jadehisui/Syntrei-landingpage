@@ -78,7 +78,7 @@ const Work = () => {
               </span>
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display leading-none">
                 OUR
-                <span className="text-stroke block">DEFENSE</span>
+                <span className="block text-foreground/50">DEFENSE</span>
               </h1>
             </motion.div>
           </div>

@@ -72,7 +72,7 @@ const Services = () => {
                     ))}
                   </motion.span>
                   <motion.span
-                    className="text-stroke block"
+                    className="block text-foreground/50"
                     initial="hidden"
                     animate="visible"
                     variants={{
@@ -110,117 +110,234 @@ const Services = () => {
                 </p>
               </motion.div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[
-                  {
-                    title: "Hybrid Transactional Firewall",
-                    description: "A state-of-the-art security layer that intercepts and analyzes transactions pre-execution to block malicious operations.",
-                    icon: <ShieldAlert className="w-12 h-12 text-primary" />,
-                  },
-                  {
-                    title: "Move SecAI",
-                    description: "An AI model solely trained on Move auditing and bug detection, providing automated vulnerability analysis for smart contracts.",
-                    icon: <Brain className="w-12 h-12 text-primary" />,
-                  },
-                  {
-                    title: "0xSecure Dashboard",
-                    description: "A comprehensive user dashboard for real-time wallet security, permission management, and threat visualization.",
-                    icon: <LayoutDashboard className="w-12 h-12 text-primary" />,
-                  },
-                  {
-                    title: "Security Auditing",
-                    description: "In-depth manual and automated audits for protocols, ensuring the highest standards of code safety and economic security.",
-                    icon: <ShieldCheck className="w-12 h-12 text-primary" />,
-                  },
-                  {
-                    title: "Safelock Protocol",
-                    description: "Assets can be locked in SBT-based NFTs and instantly protected with a single click of a button.",
-                    icon: <Lock className="w-12 h-12 text-primary" />,
-                  },
-                  {
-                    title: "Custom Security Policies",
-                    description: "Tailored security rules defined in Move-compatible YAML for node-level filtering and asset safety.",
-                    icon: <Settings className="w-12 h-12 text-primary" />,
-                  },
-                ].map((service, index) => (
-                  <motion.div
-                    key={service.title}
-                    className="brutalist-card p-6 group relative overflow-hidden"
-                    initial={{
-                      opacity: 0,
-                      y: 50,
-                      rotateX: -15,
-                      scale: 0.9
-                    }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      rotateX: 0,
-                      scale: 1
-                    }}
-                    transition={{
-                      duration: 0.8,
-                      delay: index * 0.15,
-                      type: "spring",
-                      stiffness: 100
-                    }}
-                    whileHover={{
-                      y: -10,
-                      rotateX: 5,
-                      scale: 1.05,
-                      transition: { duration: 0.3 }
-                    }}
-                  >
-                    {/* Animated background gradient */}
+              <div className="mb-20">
+                <motion.h2
+                  className="text-3xl md:text-4xl font-display text-center mb-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="text-primary mr-2">/</span>
+                  OUR SERVICES
+                </motion.h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {[
+                    {
+                      title: "Security Auditing",
+                      description: "In-depth manual and automated audits for protocols, ensuring the highest standards of code safety and economic security.",
+                      icon: <ShieldCheck className="w-12 h-12 text-primary" />,
+                    },
+                    {
+                      title: "Formal Verification",
+                      description: "Mathematical proof of contract correctness using advanced verification frameworks to eliminate logic errors.",
+                      icon: <ShieldAlert className="w-12 h-12 text-primary" />,
+                    },
+                    {
+                      title: "Incident Response",
+                      description: "24/7 rapid response team to handle potential exploits, mitigate damage, and recover assets.",
+                      icon: <ShieldAlert className="w-12 h-12 text-primary" />,
+                    }
+                  ].map((service, index) => (
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={false}
-                      animate={{ rotate: [0, 360] }}
-                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    />
-
-                    {/* Icon with bounce animation */}
-                    <motion.div
-                      className="mb-4 relative z-10"
+                      key={service.title}
+                      className="brutalist-card p-6 group relative overflow-hidden"
+                      initial={{
+                        opacity: 0,
+                        y: 50,
+                        rotateX: -15,
+                        scale: 0.9
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        rotateX: 0,
+                        scale: 1
+                      }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.8,
+                        delay: index * 0.15,
+                        type: "spring",
+                        stiffness: 100
+                      }}
                       whileHover={{
-                        scale: 1.2,
-                        rotate: [0, -10, 10, 0],
-                        transition: { duration: 0.5 }
+                        y: -10,
+                        rotateX: 5,
+                        scale: 1.05,
+                        transition: { duration: 0.3 }
                       }}
                     >
-                      {service.icon}
+                      {/* Animated background gradient */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        initial={false}
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                      />
+
+                      {/* Icon with bounce animation */}
+                      <motion.div
+                        className="mb-4 relative z-10"
+                        whileHover={{
+                          scale: 1.2,
+                          rotate: [0, -10, 10, 0],
+                          transition: { duration: 0.5 }
+                        }}
+                      >
+                        {service.icon}
+                      </motion.div>
+
+                      <motion.h3
+                        className="text-xl font-display uppercase tracking-wider mb-3 text-primary relative z-10"
+                        initial={{ x: -20, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.6, delay: index * 0.15 + 0.3 }}
+                      >
+                        {service.title}
+                      </motion.h3>
+
+                      <motion.p
+                        className="text-muted-foreground font-body relative z-10"
+                        initial={{ x: -20, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.6, delay: index * 0.15 + 0.4 }}
+                      >
+                        {service.description}
+                      </motion.p>
+
+                      {/* Animated border */}
+                      <motion.div
+                        className="absolute inset-0 border border-primary/0 group-hover:border-primary/50 transition-colors duration-300"
+                        initial={{ pathLength: 0 }}
+                        whileHover={{ pathLength: 1 }}
+                        transition={{ duration: 0.8 }}
+                        style={{
+                          background: 'linear-gradient(45deg, transparent, transparent)',
+                        }}
+                      />
                     </motion.div>
+                  ))}
+                </div>
+              </div>
 
-                    <motion.h3
-                      className="text-xl font-display uppercase tracking-wider mb-3 text-primary relative z-10"
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.6, delay: index * 0.15 + 0.3 }}
-                    >
-                      {service.title}
-                    </motion.h3>
-
-                    <motion.p
-                      className="text-muted-foreground font-body relative z-10"
-                      initial={{ x: -20, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.6, delay: index * 0.15 + 0.4 }}
-                    >
-                      {service.description}
-                    </motion.p>
-
-                    {/* Animated border */}
+              <div>
+                <motion.h2
+                  className="text-3xl md:text-4xl font-display text-center mb-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="text-primary mr-2">/</span>
+                  OUR TOOLS
+                </motion.h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {[
+                    {
+                      title: "Hybrid Transactional Firewall",
+                      description: "A state-of-the-art security layer that intercepts and analyzes transactions pre-execution to block malicious operations.",
+                      icon: <ShieldAlert className="w-12 h-12 text-primary" />,
+                    },
+                    {
+                      title: "Move SecAI",
+                      description: "An AI model solely trained on Move auditing and bug detection, providing automated vulnerability analysis for smart contracts.",
+                      icon: <Brain className="w-12 h-12 text-primary" />,
+                    },
+                    {
+                      title: "0xSecure Dashboard",
+                      description: "A comprehensive user dashboard for real-time wallet security, permission management, and threat visualization.",
+                      icon: <LayoutDashboard className="w-12 h-12 text-primary" />,
+                    },
+                    {
+                      title: "Safelock Protocol",
+                      description: "Assets can be locked in SBT-based NFTs and instantly protected with a single click of a button.",
+                      icon: <Lock className="w-12 h-12 text-primary" />,
+                    },
+                    {
+                      title: "Custom Security Policies",
+                      description: "Tailored security rules defined in Move-compatible YAML for node-level filtering and asset safety.",
+                      icon: <Settings className="w-12 h-12 text-primary" />,
+                    },
+                  ].map((tool, index) => (
                     <motion.div
-                      className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/50 transition-colors duration-300"
-                      initial={{ pathLength: 0 }}
-                      whileHover={{ pathLength: 1 }}
-                      transition={{ duration: 0.8 }}
-                      style={{
-                        background: 'linear-gradient(45deg, transparent, transparent)',
+                      key={tool.title}
+                      className="brutalist-card p-6 group relative overflow-hidden"
+                      initial={{
+                        opacity: 0,
+                        y: 50,
+                        rotateX: -15,
+                        scale: 0.9
                       }}
-                    />
-                  </motion.div>
-                ))}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        rotateX: 0,
+                        scale: 1
+                      }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.8,
+                        delay: index * 0.15,
+                        type: "spring",
+                        stiffness: 100
+                      }}
+                      whileHover={{
+                        y: -10,
+                        rotateX: 5,
+                        scale: 1.05,
+                        transition: { duration: 0.3 }
+                      }}
+                    >
+                      {/* Animated background gradient */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        initial={false}
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                      />
+
+                      {/* Icon with bounce animation */}
+                      <motion.div
+                        className="mb-4 relative z-10"
+                        whileHover={{
+                          scale: 1.2,
+                          rotate: [0, -10, 10, 0],
+                          transition: { duration: 0.5 }
+                        }}
+                      >
+                        {tool.icon}
+                      </motion.div>
+
+                      <motion.h3
+                        className="text-xl font-display uppercase tracking-wider mb-3 text-primary relative z-10"
+                        initial={{ x: -20, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.6, delay: index * 0.15 + 0.3 }}
+                      >
+                        {tool.title}
+                      </motion.h3>
+
+                      <motion.p
+                        className="text-muted-foreground font-body relative z-10"
+                        initial={{ x: -20, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.6, delay: index * 0.15 + 0.4 }}
+                      >
+                        {tool.description}
+                      </motion.p>
+
+                      {/* Animated border */}
+                      <motion.div
+                        className="absolute inset-0 border border-primary/0 group-hover:border-primary/50 transition-colors duration-300"
+                        initial={{ pathLength: 0 }}
+                        whileHover={{ pathLength: 1 }}
+                        transition={{ duration: 0.8 }}
+                        style={{
+                          background: 'linear-gradient(45deg, transparent, transparent)',
+                        }}
+                      />
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           </div>

@@ -9,10 +9,9 @@ const Navigation = () => {
   const location = useLocation();
 
   const links = [
-    { name: "Home", href: "/" },
-    { name: "Solutions", href: "/services" },
-    { name: "Security", href: "/work" },
-    { name: "Technology", href: "/research" },
+    { name: "Services", href: "/services" },
+    { name: "Our Work", href: "/work" },
+    { name: "Research", href: "/research" },
     { name: "Team", href: "/team" },
     { name: "Contact", href: "/contact" },
   ];
@@ -21,16 +20,17 @@ const Navigation = () => {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-40 bg-background/60 backdrop-blur-md border-b-4 border-border"
+      className="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-md border-b border-white/5"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center h-16 md:h-20">
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <Link to="/" className="font-display text-2xl md:text-3xl text-foreground">
-              SYNTREI<span className="text-primary">.</span>
+          <motion.div whileHover={{ scale: 1.02 }}>
+            <Link to="/" className="flex items-center gap-2 md:gap-3 font-display text-2xl md:text-3xl text-foreground tracking-tight">
+              <img src="/logo.jpg" alt="Syntrei Logo" className="w-8 h-8 md:w-10 md:h-10 rounded-full" />
+              SYNTREI
             </Link>
           </motion.div>
 
@@ -86,7 +86,7 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       <motion.div
-        className="md:hidden bg-card border-b-4 border-border overflow-hidden"
+        className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border overflow-hidden"
         initial={{ height: 0 }}
         animate={{ height: isOpen ? "auto" : 0 }}
         transition={{ duration: 0.3 }}
@@ -109,6 +109,19 @@ const Navigation = () => {
               </Link>
             </motion.div>
           ))}
+          {/* Mobile CTA */}
+          <motion.div
+            initial={{ x: -20, opacity: 0 }}
+            animate={isOpen ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+            transition={{ delay: links.length * 0.1 }}
+            className="pt-4"
+          >
+            <Button asChild className="w-full">
+              <Link to="/contact" onClick={() => setIsOpen(false)} className="font-display text-base uppercase tracking-wider">
+                GET PROTECTED
+              </Link>
+            </Button>
+          </motion.div>
         </div>
       </motion.div>
     </motion.nav>

@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Anton", "Impact", "sans-serif"],
+        display: ["Inter", "sans-serif"],
         body: ["Space Mono", "monospace"],
       },
       colors: {

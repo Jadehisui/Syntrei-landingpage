@@ -31,165 +31,77 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-brutal">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       <FloatingBlocks />
 
       <motion.div
         className="relative z-10 container mx-auto px-4 md:px-8"
         style={{ y, opacity }}
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto text-center">
           <motion.div
-            initial={{ x: -200, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mb-4"
+            className="mb-8"
           >
-            <span className="text-accent font-body text-sm md:text-base tracking-widest uppercase">
-              {displayText}
-              {!isTypingComplete && (
-                <motion.span
-                  animate={{ opacity: [1, 0] }}
-                  transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
-                  className="inline-block ml-1"
-                >
-                  |
-                </motion.span>
-              )}
+            <span className="text-accent/80 font-body text-sm tracking-[0.2em] uppercase">
+              Move Ecosystem Protection
             </span>
           </motion.div>
 
           <motion.h1
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-display leading-none mb-6"
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-display tracking-tight leading-none mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <motion.div
-              className="block text-foreground"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: 0.1,
-                    delayChildren: 0.5
-                  }
-                }
-              }}
-            >
-              {"PRE-TRANSACTION".split("").map((letter, index) => (
-                <motion.span
-                  key={index}
-                  variants={{
-                    hidden: { y: 20, opacity: 0 },
-                    visible: { y: 0, opacity: 1 }
-                  }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="inline-block"
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </motion.div>
-            <motion.div
-              className="block text-stroke glow-text"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: 0.1,
-                    delayChildren: 0.8
-                  }
-                }
-              }}
-            >
-              {"ANALYSIS & MONITORING".split("").map((letter, index) => (
-                <motion.span
-                  key={index}
-                  variants={{
-                    hidden: { y: 20, opacity: 0 },
-                    visible: { y: 0, opacity: 1 }
-                  }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="inline-block"
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </motion.div>
-            <motion.div
-              className="block text-primary"
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: {
-                    staggerChildren: 0.1,
-                    delayChildren: 1.1
-                  }
-                }
-              }}
-            >
-              {"SECURITY LAYER".split("").map((letter, index) => (
-                <motion.span
-                  key={index}
-                  variants={{
-                    hidden: { y: 20, opacity: 0 },
-                    visible: { y: 0, opacity: 1 }
-                  }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="inline-block"
-                >
-                  {letter}
-                </motion.span>
-              ))}
-            </motion.div>
+            <span className="block text-foreground mb-2">UNIFIED</span>
+            <span className="block text-foreground/80 mb-2">SECURITY</span>
+            <span className="block text-primary">OPERATION</span>
           </motion.h1>
 
+          <motion.p
+            className="text-muted-foreground text-lg md:text-xl font-body max-w-2xl mx-auto mb-12 leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Advanced pre-transaction analysis and real-time threat monitoring.
+          </motion.p>
+
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-8 md:mt-12"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <motion.button
               onClick={scrollToAbout}
-              className="brutalist-block px-8 py-4 text-foreground font-display text-lg uppercase tracking-wider"
+              className="px-8 py-4 text-foreground font-display text-lg uppercase tracking-wider border border-white/10 hover:border-primary/50 hover:bg-white/5 transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Explore More
+              Explore Platform
             </motion.button>
 
             <motion.a
               href="#contact"
-              className="border-4 border-primary bg-transparent px-8 py-4 text-primary font-display text-lg uppercase tracking-wider text-center hover:bg-primary hover:text-background transition-colors"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+              className="px-8 py-4 text-primary font-display text-lg uppercase tracking-wider hover:text-accent transition-colors flex items-center gap-2"
+              whileHover={{ x: 5 }}
             >
-              Get In Touch
+              Get In Touch <span className="text-xl">→</span>
             </motion.a>
           </motion.div>
         </div>
       </motion.div>
 
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 opacity-50"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-12 border-4 border-foreground flex justify-center pt-2">
-          <motion.div
-            className="w-2 h-2 bg-accent"
-            animate={{ y: [0, 16, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-        </div>
+        <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-foreground/50 to-transparent"></div>
       </motion.div>
     </section>
   );

@@ -22,20 +22,49 @@ const Contact = () => {
     heardAbout: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Quote request sent! We'll get back to you soon.");
-    setFormData({
-      name: "",
-      company: "",
-      email: "",
-      telegramTwitter: "",
-      serviceType: "",
-      projectDescription: "",
-      repoLink: "",
-      startDate: "",
-      heardAbout: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/syntrei0@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: `New Quote Request from ${formData.name}`,
+          _template: "table",
+          _captcha: "false" // Optional: disable captcha for smoother experience, enable if spam occurs
+        })
+      });
+
+      if (response.ok) {
+        toast.success("Quote request sent successfully! We'll get back to you soon.");
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          telegramTwitter: "",
+          serviceType: "",
+          projectDescription: "",
+          repoLink: "",
+          startDate: "",
+          heardAbout: "",
+        });
+      } else {
+        toast.error("Something went wrong. Please try again later or email us directly at syntrei0@gmail.com");
+      }
+    } catch (error) {
+      toast.error("Failed to send request. Please check your connection.");
+      console.error("Submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -69,7 +98,7 @@ const Contact = () => {
               </span>
               <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display leading-none">
                 GET A FREE
-                <span className="text-stroke block">QUOTE TODAY</span>
+                <span className="block text-foreground/50">QUOTE TODAY</span>
               </h1>
               <p className="text-muted-foreground font-body text-lg mt-4">
                 Tell us a bit about you and we'll schedule a call. You'll quickly see why we're the right choice to protect your project's reputation so you can ship with confidence.
@@ -91,6 +120,9 @@ const Contact = () => {
                 animate={isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
+                {/* Hidden input for honeypot (FormSubmit feature) */}
+                <input type="text" name="_honey" style={{ display: "none" }} />
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <motion.div
                     whileFocus={{ scale: 1.02 }}
@@ -105,7 +137,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full bg-transparent border-4 border-foreground px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
+                      className="w-full bg-transparent border border-white/10 px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
                       placeholder="Your name"
                     />
                   </motion.div>
@@ -123,7 +155,7 @@ const Contact = () => {
                       value={formData.company}
                       onChange={handleChange}
                       required
-                      className="w-full bg-transparent border-4 border-foreground px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
+                      className="w-full bg-transparent border border-white/10 px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
                       placeholder="Your company"
                     />
                   </motion.div>
@@ -141,7 +173,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full bg-transparent border-4 border-foreground px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
+                      className="w-full bg-transparent border border-white/10 px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
                       placeholder="your@email.com"
                     />
                   </motion.div>
@@ -158,7 +190,7 @@ const Contact = () => {
                       name="telegramTwitter"
                       value={formData.telegramTwitter}
                       onChange={handleChange}
-                      className="w-full bg-transparent border-4 border-foreground px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
+                      className="w-full bg-transparent border border-white/10 px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
                       placeholder="@username"
                     />
                   </motion.div>
@@ -173,7 +205,7 @@ const Contact = () => {
                     value={formData.serviceType}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-4 border-foreground px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
+                    className="w-full bg-transparent border border-white/10 px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
                   >
                     <option value="">Select an option</option>
                     <option value="long-term">I'm looking for a long-term engagement with Syntrei's security team.</option>
@@ -193,7 +225,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={4}
-                    className="w-full bg-transparent border-4 border-foreground px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors resize-none"
+                    className="w-full bg-transparent border border-white/10 px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors resize-none"
                     placeholder="Describe your project..."
                   />
                 </motion.div>
@@ -207,7 +239,7 @@ const Contact = () => {
                     name="repoLink"
                     value={formData.repoLink}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-4 border-foreground px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
+                    className="w-full bg-transparent border border-white/10 px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
                     placeholder="https://github.com/your-repo"
                   />
                 </motion.div>
@@ -222,7 +254,7 @@ const Contact = () => {
                     value={formData.startDate}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-4 border-foreground px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
+                    className="w-full bg-transparent border border-white/10 px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
                     placeholder="e.g., ASAP, Next month"
                   />
                 </motion.div>
@@ -237,24 +269,25 @@ const Contact = () => {
                     value={formData.heardAbout}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-4 border-foreground px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
+                    className="w-full bg-transparent border border-white/10 px-4 py-3 font-body text-foreground focus:border-primary focus:outline-none transition-colors"
                     placeholder="e.g., Twitter, Referral"
                   />
                 </motion.div>
 
                 <motion.button
                   type="submit"
-                  className="brutalist-block w-full md:w-auto px-12 py-4 font-display text-lg uppercase tracking-wider text-foreground bg-primary border-foreground hover:bg-accent hover:text-background transition-colors"
-                  whileHover={{ scale: 1.02, rotate: -1 }}
-                  whileTap={{ scale: 0.98 }}
+                  disabled={isSubmitting}
+                  className="brutalist-block w-full md:w-auto px-12 py-4 font-display text-lg uppercase tracking-wider text-foreground bg-primary border-foreground hover:bg-accent hover:text-background transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  whileHover={!isSubmitting ? { scale: 1.02, rotate: -1 } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                 >
-                  Request Quote
+                  {isSubmitting ? "Sending..." : "Request Quote"}
                 </motion.button>
               </motion.form>
 
               {/* Contact Info */}
               <motion.div
-                className="grid sm:grid-cols-3 gap-8 mt-16 md:mt-24 pt-12 border-t-4 border-border"
+                className="grid sm:grid-cols-3 gap-8 mt-16 md:mt-24 pt-12 border-t border-white/10"
                 initial={{ y: 50, opacity: 0 }}
                 animate={isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -279,7 +312,7 @@ const Contact = () => {
 
           {/* Decorative blocks */}
           <motion.div
-            className="absolute top-1/4 -left-16 w-32 h-32 border-4 border-primary/30 hidden lg:block"
+            className="absolute top-1/4 -left-16 w-32 h-32 border border-primary/10 hidden lg:block"
             animate={{ rotate: [0, 90, 180, 270, 360] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           />
