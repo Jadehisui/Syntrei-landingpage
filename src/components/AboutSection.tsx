@@ -5,11 +5,11 @@ const AboutSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const skills = [
-    { name: "MOVE BYTECODE ANALYSIS", level: 98 },
-    { name: "THREAT INTELLIGENCE", level: 95 },
-    { name: "POLICY ENFORCEMENT", level: 100 },
-    { name: "REAL-TIME MONITORING", level: 92 },
+  const metrics = [
+    { name: "MOVE BYTECODE ANALYSIS", percentage: "98%" },
+    { name: "THREAT INTELLIGENCE", percentage: "95%" },
+    { name: "POLICY ENFORCEMENT", percentage: "100%" },
+    { name: "REAL-TIME MONITORING", percentage: "92%" },
   ];
 
   return (
@@ -34,8 +34,8 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground font-body text-sm md:text-base leading-relaxed">
               <p>
-                Syntrei is a decentralized pre-transaction analysis and monitoring tool
-                designed to eliminate on-chain exploits. We intercept risks
+                Syntrei is a premier security operation center and blockchain security provider
+                delivering essential protection for your Web3 products. We intercept risks
                 before they reach the chain, preserving low-latency performance.
               </p>
               <p>
@@ -46,31 +46,26 @@ const AboutSection = () => {
             </div>
           </motion.div>
 
-          {/* Right Column - Skills */}
+          {/* Right Column - Metrics Grid */}
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             animate={isInView ? { x: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            className="grid grid-cols-2 gap-6"
           >
-            {skills.map((skill, index) => (
+            {metrics.map((metric, index) => (
               <motion.div
-                key={skill.name}
-                initial={{ width: 0 }}
-                animate={isInView ? { width: "100%" } : {}}
-                transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
+                key={metric.name}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={isInView ? { scale: 1, opacity: 1 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                className="brutalist-block p-6 text-center"
               >
-                <div className="flex justify-between mb-2">
-                  <span className="font-display text-lg text-foreground">{skill.name}</span>
-                  <span className="font-body text-accent">{skill.level}%</span>
+                <div className="text-4xl md:text-5xl font-display text-primary mb-2">
+                  {metric.percentage}
                 </div>
-                <div className="h-4 bg-brutalist-midnight border-2 border-foreground">
-                  <motion.div
-                    className="h-full bg-primary"
-                    initial={{ width: 0 }}
-                    animate={isInView ? { width: `${skill.level}%` } : {}}
-                    transition={{ duration: 1, delay: 0.6 + index * 0.15, ease: "easeOut" }}
-                  />
+                <div className="font-body text-xs md:text-sm text-muted-foreground uppercase tracking-wider">
+                  {metric.name}
                 </div>
               </motion.div>
             ))}

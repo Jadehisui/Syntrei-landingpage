@@ -67,7 +67,7 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Advanced pre-transaction analysis and real-time threat monitoring.
+            A comprehensive security operation center providing essential blockchain protection for your products.
           </motion.p>
 
           <motion.div

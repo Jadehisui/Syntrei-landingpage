@@ -16,7 +16,7 @@ const Footer = () => {
               SYNTREI
             </Link>
             <p className="font-body text-sm text-muted-foreground/80 leading-relaxed max-w-xs">
-              Advanced pre-transaction security layer for the Move ecosystem.
+              Unified security operation center providing elite blockchain protection.
             </p>
           </motion.div>
 
@@ -65,12 +65,12 @@ const Footer = () => {
                 Telegram (Ox_jade)
               </a>
               <a
-                href="https://twitter.com/syntrei"
+                href="https://x.com/0xjade"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block font-body text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                Twitter
+                X (@0xjade)
               </a>
               <a
                 href="https://github.com/syntrei"
@@ -94,7 +94,7 @@ const Footer = () => {
             © 2025 SYNTREI. All rights reserved
           </p>
           <p className="font-body text-xs text-muted-foreground/60">
-            Securing the Move ecosystem
+            Your blockchain security provider
           </p>
         </motion.div>
       </div>

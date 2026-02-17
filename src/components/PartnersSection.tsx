@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
-import { Shield, Droplets, Fingerprint, Waves, BarChart3, Rocket } from "lucide-react";
 
 const PartnersSection = () => {
   const partners = [
-    { name: "Sui Foundation", logo: <Droplets className="w-12 h-12 text-primary" /> },
-    { name: "CertiK", logo: <Shield className="w-12 h-12 text-primary" /> },
-    { name: "SlowMist", logo: <Fingerprint className="w-12 h-12 text-primary" /> },
-    { name: "Mysten Labs", logo: <Waves className="w-12 h-12 text-primary" /> },
-    { name: "Chainalysis", logo: <BarChart3 className="w-12 h-12 text-primary" /> },
-    { name: "Movement", logo: <Rocket className="w-12 h-12 text-primary" /> },
+    { name: "Sui Foundation", logo: "/logos/sui.png" },
+    { name: "Mysten Labs", logo: "/logos/mysten.png" },
+    { name: "Hop Exchange", logo: "/logos/hop.svg" },
+    { name: "Movement Labs", logo: "/logos/movements.png" },
   ];
 
   return (
@@ -29,23 +26,22 @@ const PartnersSection = () => {
           </h2>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 lg:gap-32">
           {partners.map((partner, index) => (
             <motion.div
               key={partner.name}
-              className="flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity"
+              className="flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity"
               initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 0.6 }}
+              whileInView={{ scale: 1, opacity: 0.7 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className="mb-2">
-                {partner.logo}
-              </div>
-              <span className="text-muted-foreground font-body text-sm uppercase tracking-wider">
-                {partner.name}
-              </span>
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="w-24 h-24 object-contain"
+              />
             </motion.div>
           ))}
         </div>

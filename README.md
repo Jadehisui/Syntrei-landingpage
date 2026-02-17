@@ -1,4 +1,4 @@
-# Deep Blue Nexus
+# Syntrei
 
 AI & Blockchain Security Experts.
 
