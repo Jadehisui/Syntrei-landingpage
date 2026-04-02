@@ -20,8 +20,19 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About | BRUTAL. - Breaking Conventions</title>
-        <meta name="description" content="Discover the philosophy behind brutalist design. We reject the polished and embrace raw, authentic digital experiences." />
+        <title>About | SYNTREI - Blockchain Security Experts</title>
+        <meta name="description" content="Learn about SYNTREI's team and mission to eliminate on-chain exploits and protect the Move ecosystem with elite security solutions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SYNTREI" />
+        <meta property="og:title" content="About | SYNTREI - Blockchain Security Experts" />
+        <meta property="og:description" content="Learn about SYNTREI's team and mission to eliminate on-chain exploits and protect the Move ecosystem with elite security solutions." />
+        <meta property="og:image" content="https://syntrei.io/logo.jpg" />
+        <meta property="og:url" content="https://syntrei.io/about" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@0xjade" />
+        <meta name="twitter:title" content="About | SYNTREI - Blockchain Security Experts" />
+        <meta name="twitter:description" content="Learn about SYNTREI's team and mission to eliminate on-chain exploits and protect the Move ecosystem." />
+        <meta name="twitter:image" content="https://syntrei.io/logo.jpg" />
       </Helmet>
 
       <MouseFollower />

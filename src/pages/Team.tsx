@@ -12,6 +12,17 @@ const Team = () => {
       <Helmet>
         <title>Mission & Expertise - Syntrei | Security Operation Center</title>
         <meta name="description" content="Syntrei's mission and collective expertise in blockchain security and Move VM protection." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SYNTREI" />
+        <meta property="og:title" content="Mission & Expertise - Syntrei | Security Operation Center" />
+        <meta property="og:description" content="Syntrei's mission and collective expertise in blockchain security and Move VM protection." />
+        <meta property="og:image" content="https://syntrei.io/logo.jpg" />
+        <meta property="og:url" content="https://syntrei.io/team" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@0xjade" />
+        <meta name="twitter:title" content="Mission & Expertise - Syntrei | Security Operation Center" />
+        <meta name="twitter:description" content="Syntrei's mission and collective expertise in blockchain security and Move VM protection." />
+        <meta name="twitter:image" content="https://syntrei.io/logo.jpg" />
       </Helmet>
 
       <MouseFollower />

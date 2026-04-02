@@ -56,6 +56,17 @@ const Work = () => {
       <Helmet>
         <title>Security Interceptions | SYNTREI - Case Studies</title>
         <meta name="description" content="Review our track record of intercepting on-chain threats, phishing attempts, and contract exploits in real-time." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SYNTREI" />
+        <meta property="og:title" content="Security Interceptions | SYNTREI - Case Studies" />
+        <meta property="og:description" content="Review our track record of intercepting on-chain threats, phishing attempts, and contract exploits in real-time." />
+        <meta property="og:image" content="https://syntrei.io/logo.jpg" />
+        <meta property="og:url" content="https://syntrei.io/work" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@0xjade" />
+        <meta name="twitter:title" content="Security Interceptions | SYNTREI - Case Studies" />
+        <meta name="twitter:description" content="Review our track record of intercepting on-chain threats, phishing attempts, and contract exploits in real-time." />
+        <meta name="twitter:image" content="https://syntrei.io/logo.jpg" />
       </Helmet>
 
       <MouseFollower />

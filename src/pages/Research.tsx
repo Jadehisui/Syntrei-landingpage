@@ -10,6 +10,17 @@ const Research = () => {
       <Helmet>
         <title>Research - Syntrei | Security Research & Analysis</title>
         <meta name="description" content="Cutting-edge security research on Move VM, blockchain security, and emerging threats. Stay ahead with our latest findings and analysis." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SYNTREI" />
+        <meta property="og:title" content="Research - Syntrei | Security Research & Analysis" />
+        <meta property="og:description" content="Cutting-edge security research on Move VM, blockchain security, and emerging threats. Stay ahead with our latest findings and analysis." />
+        <meta property="og:image" content="https://syntrei.io/logo.jpg" />
+        <meta property="og:url" content="https://syntrei.io/research" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@0xjade" />
+        <meta name="twitter:title" content="Research - Syntrei | Security Research & Analysis" />
+        <meta name="twitter:description" content="Cutting-edge security research on Move VM, blockchain security, and emerging threats." />
+        <meta name="twitter:image" content="https://syntrei.io/logo.jpg" />
       </Helmet>
 
       <MouseFollower />

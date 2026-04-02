@@ -12,6 +12,17 @@ const Services = () => {
       <Helmet>
         <title>Services - Syntrei | Security Operation Platform</title>
         <meta name="description" content="Comprehensive security services including transactional firewall for Move VM, auditing tools, and AI-powered security solutions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SYNTREI" />
+        <meta property="og:title" content="Services - Syntrei | Security Operation Platform" />
+        <meta property="og:description" content="Comprehensive security services including transactional firewall for Move VM, auditing tools, and AI-powered security solutions." />
+        <meta property="og:image" content="https://syntrei.io/logo.jpg" />
+        <meta property="og:url" content="https://syntrei.io/services" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@0xjade" />
+        <meta name="twitter:title" content="Services - Syntrei | Security Operation Platform" />
+        <meta name="twitter:description" content="Comprehensive security services including transactional firewall for Move VM, auditing tools, and AI-powered security solutions." />
+        <meta name="twitter:image" content="https://syntrei.io/logo.jpg" />
       </Helmet>
 
       <MouseFollower />

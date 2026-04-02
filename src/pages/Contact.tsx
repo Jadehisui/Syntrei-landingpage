@@ -76,6 +76,17 @@ const Contact = () => {
       <Helmet>
         <title>Contact | SYNTREI - Let's Talk Security</title>
         <meta name="description" content="Ready to start a project? Get in touch for collaborations, inquiries, or just to say hello. Open for worldwide projects." />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="SYNTREI" />
+        <meta property="og:title" content="Contact | SYNTREI - Let's Talk Security" />
+        <meta property="og:description" content="Ready to start a project? Get in touch for a free quote. Open for worldwide blockchain security engagements." />
+        <meta property="og:image" content="https://syntrei.io/logo.jpg" />
+        <meta property="og:url" content="https://syntrei.io/contact" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@0xjade" />
+        <meta name="twitter:title" content="Contact | SYNTREI - Let's Talk Security" />
+        <meta name="twitter:description" content="Ready to start a project? Get in touch for a free quote. Open for worldwide blockchain security engagements." />
+        <meta name="twitter:image" content="https://syntrei.io/logo.jpg" />
       </Helmet>
 
       <MouseFollower />
