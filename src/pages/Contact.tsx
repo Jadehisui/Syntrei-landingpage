@@ -284,29 +284,6 @@ const Contact = () => {
                   {isSubmitting ? "Sending..." : "Request Quote"}
                 </motion.button>
               </motion.form>
-
-              {/* Contact Info */}
-              <motion.div
-                className="grid sm:grid-cols-3 gap-8 mt-16 md:mt-24 pt-12 border-t border-white/10"
-                initial={{ y: 50, opacity: 0 }}
-                animate={isInView ? { y: 0, opacity: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                {[
-                  { label: "General", value: "hello@syntrei.io" },
-                  { label: "Sales", value: "sales@syntrei.io" },
-                  { label: "Legal", value: "legal@syntrei.io" },
-                ].map((item) => (
-                  <div key={item.label} className="text-center sm:text-left">
-                    <span className="text-muted-foreground font-body text-xs uppercase tracking-wider block mb-1">
-                      {item.label}
-                    </span>
-                    <span className="text-foreground font-display text-lg">
-                      {item.value}
-                    </span>
-                  </div>
-                ))}
-              </motion.div>
             </motion.div>
           </div>
 
