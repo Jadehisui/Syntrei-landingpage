@@ -9,54 +9,6 @@ const Work = () => {
   const projects = [
     {
       id: 1,
-      title: "DEFI LIQUIDITY ATTACK",
-      category: "Flash Loan Defense",
-      year: "Nov 2025",
-      description: "Successfully intercepted a complex flash loan exploit targeting a major Sui liquidity pool.",
-      link: null,
-    },
-    {
-      id: 2,
-      title: "NFT DRAINER BLOCK",
-      category: "Asset Safety",
-      year: "Oct 2025",
-      description: "Blocked a malicious Move call disguised as a legitimate NFT minting operation.",
-      link: null,
-    },
-    {
-      id: 3,
-      title: "PHISHING INTERCEPTION",
-      category: "Retail Safety",
-      year: "Oct 2025",
-      description: "Real-time threat feeds identified and blocked 200+ signatures to a new phishing domain.",
-      link: null,
-    },
-    {
-      id: 4,
-      title: "FEE MANIPULATION",
-      category: "Protocol Security",
-      year: "Sept 2025",
-      description: "Detected and halted an unauthorized argument change in a critical governance function.",
-      link: null,
-    },
-    {
-      id: 5,
-      title: "SBT SAFELOCK TEST",
-      category: "Asset Recovery",
-      year: "Aug 2025",
-      description: "Demonstrated instant asset freezing via Safelock protocol during a simulated breach.",
-      link: null,
-    },
-    {
-      id: 6,
-      title: "OFAC COMPLIANCE",
-      category: "Institutional",
-      year: "Aug 2025",
-      description: "Implemented custom spending limits and sanctioned address filtering for a Tier 1 custodian.",
-      link: null,
-    },
-    {
-      id: 7,
       title: "HOPLAUNCH AUDIT",
       category: "Smart Contract Audit",
       year: "2025",
@@ -64,7 +16,7 @@ const Work = () => {
       link: "https://github.com/syntrei/Audit-reports-/blob/main/reports/2025/Hoplaunch/Hoplaunch_Security_Audit_Report.pdf",
     },
     {
-      id: 8,
+      id: 2,
       title: "HOPE PROTOCOL AUDIT",
       category: "Smart Contract Audit",
       year: "2026",
@@ -72,7 +24,7 @@ const Work = () => {
       link: "https://github.com/syntrei/Audit-reports-/blob/main/reports/2026/Hope-Protocol/Hope_Protocol_Security_Audit_Report.pdf",
     },
     {
-      id: 9,
+      id: 3,
       title: "LINQ AUDIT",
       category: "Smart Contract Audit",
       year: "2026",
@@ -80,7 +32,7 @@ const Work = () => {
       link: "https://github.com/syntrei/Audit-reports-/blob/main/reports/2026/LINQ/LINQ_Security_Audit_Report.pdf",
     },
     {
-      id: 10,
+      id: 4,
       title: "SENTRA AUDIT",
       category: "Smart Contract Audit",
       year: "2026",
@@ -88,7 +40,7 @@ const Work = () => {
       link: "https://github.com/syntrei/Audit-reports-/blob/main/reports/2026/Sentra/Sentra_Security_Audit_Report.pdf",
     },
     {
-      id: 11,
+      id: 5,
       title: "TD2 STAKING AUDIT",
       category: "Smart Contract Audit",
       year: "2026",
@@ -96,7 +48,7 @@ const Work = () => {
       link: "https://github.com/syntrei/Audit-reports-/blob/main/reports/2026/TD2/TD2_Staking_Security_Audit_Report.pdf",
     },
     {
-      id: 12,
+      id: 6,
       title: "VESTING MODULE AUDIT",
       category: "Smart Contract Audit",
       year: "2026",
@@ -154,7 +106,7 @@ const Work = () => {
           <GeometricShapes variant="sparse" />
 
           <div className="container mx-auto px-4 md:px-8">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               {projects.map((project, index) => (
                 <motion.article
                   key={project.id}
