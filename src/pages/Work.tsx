@@ -13,6 +13,7 @@ const Work = () => {
       category: "Flash Loan Defense",
       year: "Nov 2025",
       description: "Successfully intercepted a complex flash loan exploit targeting a major Sui liquidity pool.",
+      link: null,
     },
     {
       id: 2,
@@ -20,6 +21,7 @@ const Work = () => {
       category: "Asset Safety",
       year: "Oct 2025",
       description: "Blocked a malicious Move call disguised as a legitimate NFT minting operation.",
+      link: null,
     },
     {
       id: 3,
@@ -27,6 +29,7 @@ const Work = () => {
       category: "Retail Safety",
       year: "Oct 2025",
       description: "Real-time threat feeds identified and blocked 200+ signatures to a new phishing domain.",
+      link: null,
     },
     {
       id: 4,
@@ -34,6 +37,7 @@ const Work = () => {
       category: "Protocol Security",
       year: "Sept 2025",
       description: "Detected and halted an unauthorized argument change in a critical governance function.",
+      link: null,
     },
     {
       id: 5,
@@ -41,6 +45,7 @@ const Work = () => {
       category: "Asset Recovery",
       year: "Aug 2025",
       description: "Demonstrated instant asset freezing via Safelock protocol during a simulated breach.",
+      link: null,
     },
     {
       id: 6,
@@ -48,6 +53,55 @@ const Work = () => {
       category: "Institutional",
       year: "Aug 2025",
       description: "Implemented custom spending limits and sanctioned address filtering for a Tier 1 custodian.",
+      link: null,
+    },
+    {
+      id: 7,
+      title: "HOPLAUNCH AUDIT",
+      category: "Smart Contract Audit",
+      year: "2025",
+      description: "Comprehensive security audit of the Hoplaunch protocol, covering smart contract logic, access control, and launch mechanism vulnerabilities.",
+      link: "https://github.com/syntrei/Audit-reports-/blob/main/reports/2025/Hoplaunch/Hoplaunch_Security_Audit_Report.pdf",
+    },
+    {
+      id: 8,
+      title: "HOPE PROTOCOL AUDIT",
+      category: "Smart Contract Audit",
+      year: "2026",
+      description: "Full security review of Hope Protocol's on-chain contracts, identifying critical risk vectors and providing actionable remediation steps.",
+      link: "https://github.com/syntrei/Audit-reports-/blob/main/reports/2026/Hope-Protocol/Hope_Protocol_Security_Audit_Report.pdf",
+    },
+    {
+      id: 9,
+      title: "LINQ AUDIT",
+      category: "Smart Contract Audit",
+      year: "2026",
+      description: "In-depth audit of LINQ's smart contract suite, assessing protocol safety, economic attack surfaces, and upgrade security.",
+      link: "https://github.com/syntrei/Audit-reports-/blob/main/reports/2026/LINQ/LINQ_Security_Audit_Report.pdf",
+    },
+    {
+      id: 10,
+      title: "SENTRA AUDIT",
+      category: "Smart Contract Audit",
+      year: "2026",
+      description: "Security assessment of Sentra's contracts, focusing on reentrancy, privilege escalation, and state management weaknesses.",
+      link: "https://github.com/syntrei/Audit-reports-/blob/main/reports/2026/Sentra/Sentra_Security_Audit_Report.pdf",
+    },
+    {
+      id: 11,
+      title: "TD2 STAKING AUDIT",
+      category: "Smart Contract Audit",
+      year: "2026",
+      description: "Thorough audit of TD2's staking contract, examining reward calculation logic, withdrawal safety, and potential economic exploits.",
+      link: "https://github.com/syntrei/Audit-reports-/blob/main/reports/2026/TD2/TD2_Staking_Security_Audit_Report.pdf",
+    },
+    {
+      id: 12,
+      title: "VESTING MODULE AUDIT",
+      category: "Smart Contract Audit",
+      year: "2026",
+      description: "Audit of a token vesting module covering cliff logic, beneficiary access control, and emergency withdrawal edge cases.",
+      link: "https://github.com/syntrei/Audit-reports-/blob/main/reports/2026/Vesting-Module/Vesting_Module_Security_Audit_Report.pdf",
     },
   ];
 
@@ -100,7 +154,7 @@ const Work = () => {
           <GeometricShapes variant="sparse" />
 
           <div className="container mx-auto px-4 md:px-8">
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {projects.map((project, index) => (
                 <motion.article
                   key={project.id}
@@ -110,6 +164,7 @@ const Work = () => {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ rotate: 0, scale: 1.02 }}
+                  onClick={() => project.link && window.open(project.link, "_blank", "noopener,noreferrer")}
                 >
                   {/* Project Number */}
                   <motion.span
@@ -145,7 +200,7 @@ const Work = () => {
                     className="flex items-center gap-2 text-accent font-display text-sm uppercase tracking-wider"
                     whileHover={{ x: 10 }}
                   >
-                    <span>View Project</span>
+                    <span>{project.link ? "View Audit Report" : "View Project"}</span>
                     <motion.span
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1.5, repeat: Infinity }}
